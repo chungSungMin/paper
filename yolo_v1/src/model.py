@@ -35,7 +35,6 @@ class YOLO_V1(nn.Module):
             nn.MaxPool2d((2,2), stride=2)
         )
 
-
         self.conv4_bottleNeck = nn.Sequential(
             nn.Conv2d(in_channels=512, out_channels=256, kernel_size=(1,1), stride=1),
             nn.Conv2d(in_channels=256, out_channels=512, kernel_size=(3,3), stride=1, padding = 1),
