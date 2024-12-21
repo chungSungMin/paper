@@ -5,7 +5,10 @@ import torch.nn.functional as F
 
 
 class YOLO_V1(nn.Module):
-    """yolov1의 논문에 나와있는 구조 구현 ( padding에 대한 이야기가 없지만 padding을 하지 않으면 에러 발생)"""
+    """yolov1의 논문에 나와있는 구조 구현 ( padding에 대한 이야기가 없지만 padding을 하지 않으면 에러 발생)
+        kerenel_size = (7,7), st = 2 인 경우 padding = 3을 추가 하였습니다.
+        kerenel_size = (3,3), st = 2 인 경우 padding = 1을 추가 하였습니다.
+    """
     def __init__(self, in_channels, S, B, C):
         super().__init__()
 
