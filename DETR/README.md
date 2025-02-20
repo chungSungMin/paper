@@ -57,7 +57,7 @@ surrogate regression을 사용하지 않고 집합관점에서 집합 Loss와 �
 한번의 패스로 객체를 탐지하는 과정에서 가장 어려운 것은 실제 값과 예측 값를 비교하는 손실 함수를 정의 하는 것입니다. 해당 논문에서는 총 N개의 객체를 모델이 예측하도록 합니다. 이때 N은 실제 객체의 갯수보다 훨씬 큰 수로 설정하게 됩니다. 그렇기 때문에 N개 중 NULL 값을 갖을 수도 있습니다. 그래서 N개 중에서 이분매칭을 통해서 손실함수가 작은 순으로 나열을 할 수 있게 됩니다.
 
 $$
-\sigma = \underset{\sigma \in S_N}{\operatorname{arg\,min}} \sum_{i=1}^{N} L_{\text{match}}(y_i, \hat{y}_{\sigma(i)})
+\sigma = \underset{\sigma \in S_N}{\mathrm{arg\,min}} \sum_{i=1}^{N} L_{\text{match}}(y_i, \hat{y}_{\sigma(i)})
 $$
 
 다음과 같이 이분매칭을 활용하게 됩니다. 이때 효율적인 비교를 위해서 Hungarian algorithm 을 활용한다고 합니다.
